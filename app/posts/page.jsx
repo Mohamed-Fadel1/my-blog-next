@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getAllPosts } from "../lib/posts";
-import DeletePostButton from "./DeletePostButton ";
+import DeletePostButton from "./DeletePostButton";
 
 const Posts = async () => {
   const allPosts = await getAllPosts();

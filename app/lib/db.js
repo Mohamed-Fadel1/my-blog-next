@@ -1,6 +1,10 @@
 import Database from "better-sqlite3";
 
-export const db = new Database("blog.db");
+const dbPath = process.env.VERCEL
+  ? "/tmp/blog.db"
+  : path.join(process.cwd(), "blog.db");
+
+export const db = new Database(dbPath);
 
 db.exec(`
   CREATE TABLE IF NOT EXISTS posts (
